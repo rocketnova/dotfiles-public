@@ -1,0 +1,36 @@
+[user]
+  name = Rocket !
+  email = rocketnova@users.noreply.github.com
+[core]
+  autocrlf = input
+  excludesfile = ~/.gitexcludes
+  quotePath = false
+[alias]
+  st = status
+  co = checkout
+  b = branch
+  l = log --decorate=full --pretty=oneline
+  h = log --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(yellow)[%an]%C(bold blue)%d%Creset' --abbrev-commit
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+[color]
+  diff = auto
+  interactive = auto
+  status = auto
+  branch = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+[push]
+  default = matching
+[init]
+  defaultBranch = main
+[diff]
+  tool = kitty
+  guitool = kitty.gui
+[difftool]
+  prompt = false
+  trustExitCode = true
+[difftool "kitty"]
+  cmd = kitten diff $LOCAL $REMOTE
+[difftool "kitty.gui"]
+  cmd = kitten diff $LOCAL $REMOTE
