@@ -47,7 +47,7 @@ export PATH=$PATH:$HOME/.local/bin
 alias la="ls -lah"
 
 # Direnv: https://direnv.net
-eval "$(direnv hook bash)"
+eval "$(direnv hook zsh)"
 
 # In progress work
 ##################
