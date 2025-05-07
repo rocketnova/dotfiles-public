@@ -46,9 +46,8 @@ export PATH=$PATH:$HOME/.local/bin
 
 alias la="ls -lah"
 
-# Direnv: https://direnv.net
+# Direnv (conditional env vars): https://direnv.net
 eval "$(direnv hook zsh)"
 
-# In progress work
-##################
-eval "$(oh-my-posh init zsh --config ~/.cache/oh-my-posh/themes/powerlevel10k_lean.omp.json)"
+# Oh-my-posh (shell prompt): https://ohmyposh.dev
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/rkt.omp.toml)"

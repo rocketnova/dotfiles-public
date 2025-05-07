@@ -1,0 +1,65 @@
+# Heavily based on https://github.com/dreamsofautonomy/zen-omp & https://youtu.be/9U8LCjuQzdc
+version = 3
+final_space = true
+
+[upgrade]
+  source = 'cdn'
+  interval = '168h'
+  auto = false
+  notice = true
+
+[secondary_prompt]
+  template = '❯❯ '
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+
+  [[blocks.segments]]
+    type = 'session'
+    foreground = 'darkGray'
+    style = 'plain'
+    template = '{{ if .SSHSession }}\ueba9 {{ end }}{{ .UserName }}@{{ .HostName }} '
+
+  [[blocks.segments]]
+    type = 'path'
+    foreground = 'blue'
+    style = 'plain'
+    template = '{{ .Path }} '
+
+    [blocks.segments.properties]
+      style = 'agnoster_full'
+
+  [[blocks.segments]]
+    type = 'git'
+    foreground = 'magenta'
+    style = 'plain'
+    template = '{{ .HEAD }}{{ if .Working.Changed }}* {{ end }} '
+
+    [blocks.segments.properties]
+      fetch_status = true
+      branch_icon = ''
+
+  [[blocks.segments]]
+    type = 'text'
+    foreground_templates = [
+      "{{if gt .Code 0}}red{{end}}",
+      "{{if eq .Code 0}}cyan{{end}}",
+    ]
+    style = 'plain'
+    template = '❯ '
+
+[[blocks]]
+  type = 'rprompt'
+  overflow = 'hidden'
+
+  [[blocks.segments]]
+    type = 'executiontime'
+    foreground = 'darkGray'
+    template = '{{ .FormattedMs }}'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      style = 'austin'
+      threshold = 5000
+
