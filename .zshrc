@@ -44,4 +44,11 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 export EDITOR="vim"
 export PATH=$PATH:$HOME/.local/bin
 
-alias la="ls -la"
+alias la="ls -lah"
+
+# Direnv: https://direnv.net
+eval "$(direnv hook bash)"
+
+# In progress work
+##################
+eval "$(oh-my-posh init zsh --config ~/.cache/oh-my-posh/themes/powerlevel10k_lean.omp.json)"
