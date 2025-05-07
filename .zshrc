@@ -46,6 +46,11 @@ export PATH=$PATH:$HOME/.local/bin
 
 alias la="ls -lah"
 
+alias l="eza --long --all --smart-group --git --time-style=relative"
+alias lf="eza --long --all --smart-group --git --time-style=long-iso"
+alias ll="eza --oneline"
+alias gr="eza --long --git-repos --no-user --no-filesize --no-time --no-permissions"
+
 # Direnv (conditional env vars): https://direnv.net
 eval "$(direnv hook zsh)"
 
