@@ -1,4 +1,3 @@
-# Heavily based on https://github.com/dreamsofautonomy/zen-omp & https://youtu.be/9U8LCjuQzdc
 version = 3
 final_space = true
 
@@ -19,7 +18,7 @@ final_space = true
     type = 'session'
     foreground = 'darkGray'
     style = 'plain'
-    template = '{{ if .SSHSession }}\ueba9 {{ end }}{{ .UserName }}@{{ .HostName }} '
+    template = "{{ if .SSHSession }}\ueba9 {{ end }}{{ .UserName }}@{{ .HostName }} "
 
   [[blocks.segments]]
     type = 'path'
@@ -34,7 +33,7 @@ final_space = true
     type = 'git'
     foreground = 'magenta'
     style = 'plain'
-    template = '{{ .HEAD }}{{ if .Working.Changed }}* {{ end }} '
+    template = "{{ .HEAD }}{{ if .Working.Changed }}*{{ end }}{{ if ne .Ahead 0 }}\ueaa1{{ end }}{{ if ne .Behind 0 }}\uea9a{{ end }}{{ if .UpstreamGone }}?{{ end }} "
 
     [blocks.segments.properties]
       fetch_status = true
