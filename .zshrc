@@ -56,3 +56,7 @@ eval "$(direnv hook zsh)"
 
 # Oh-my-posh (shell prompt): https://ohmyposh.dev
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/rkt.omp.toml)"
+
+# Configure zsh to recognize symbols as word characters to allow alt+left and alt+right to jump by word even in paths
+# See: https://github.com/kovidgoyal/kitty/issues/838#issuecomment-2303988124
+export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
